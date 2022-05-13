@@ -4,7 +4,6 @@ import requests
 
 from config import SLACK_TOKEN
 
-
 def post_massage(result: dict):
     requests.post("https://slack.com/api/chat.postMessage",
                   headers={"Authorization": "Bearer " + SLACK_TOKEN},
@@ -16,7 +15,6 @@ def post_massage(result: dict):
                             f"항공사: {result['airline_name']}\n"
                             f"대행사: {result['agency_name']}"}]), "color": "#f03e3e"
                         })
-
 
 def post_message_graph(result: dict):
     requests.post("https://slack.com/api/chat.postMessage",
